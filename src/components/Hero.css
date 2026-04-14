@@ -439,7 +439,10 @@
 .plat--meta { background: #1877f2; }
 .plat--li   { background: #0a66c2; }
 
-/* ─ Floating notification cards ─ */
+/* ─ Floating notification cards ─
+   Positioned relative to .hero section (outside the grid),
+   so they NEVER affect column widths or cause text reflow.
+   pointer-events:none ensures no hover interference.        */
 .hero__notif {
   position: absolute;
   display: flex;
@@ -450,13 +453,16 @@
   border-radius: var(--radius-lg);
   padding: 0.75rem 1rem;
   box-shadow: var(--shadow-md);
-  z-index: 3;
+  z-index: 10;
   white-space: nowrap;
   max-width: 240px;
+  pointer-events: none;
+  will-change: transform;
 }
-.hero__notif--1 { top: 4%;  left: -8%; }
-.hero__notif--2 { bottom: 22%; right: -10%; }
-.hero__notif--3 { bottom: 5%; left: -6%; }
+/* Positioned in the right half of the hero where the dashboard lives */
+.hero__notif--1 { top: 22%;    right: 3%; }
+.hero__notif--2 { top: 52%;    right: 1%; }
+.hero__notif--3 { bottom: 16%; right: 22%; }
 
 .notif__icon {
   width: 34px; height: 34px;
@@ -505,17 +511,14 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero__notif--1 { animation: floatA 7s  ease-in-out infinite; }
-  .hero__notif--2 { animation: floatB 9s  ease-in-out infinite 1s; }
-  .hero__notif--3 { animation: floatA 8s  ease-in-out infinite 2.5s; }
+  .hero__notif--1 { animation: notifFloat 6s  ease-in-out infinite; }
+  .hero__notif--2 { animation: notifFloat 7s  ease-in-out infinite 1.5s; }
+  .hero__notif--3 { animation: notifFloat 8s  ease-in-out infinite 3s; }
 
-  @keyframes floatA {
+  /* Small 5px vertical drift only — compositor-only, zero layout impact */
+  @keyframes notifFloat {
     0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-12px); }
-  }
-  @keyframes floatB {
-    0%, 100% { transform: translateY(0) rotate(-1deg); }
-    50%       { transform: translateY(-10px) rotate(1deg); }
+    50%       { transform: translateY(-5px); }
   }
 }
 

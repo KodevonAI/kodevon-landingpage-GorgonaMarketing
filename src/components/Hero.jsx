@@ -221,9 +221,11 @@ export default function Hero() {
         {/* ── Right: Dashboard Visual ── */}
         <div className="hero__visual reveal-right delay-2">
           <DashboardVisual />
+        </div>
+      </div>
 
-          {/* Floating notification cards */}
-          <div className="hero__notif hero__notif--1" aria-hidden="true">
+      {/* Floating notification cards — outside the grid so they never affect layout */}
+      <div className="hero__notif hero__notif--1" aria-hidden="true">
             <span className="notif__icon notif__icon--ig">
               <i className="fab fa-instagram" />
             </span>
@@ -245,15 +247,13 @@ export default function Hero() {
             <span className="notif__dot-live" />
           </div>
 
-          <div className="hero__notif hero__notif--3" aria-hidden="true">
-            <span className="notif__icon notif__icon--gold">
-              <i className="fas fa-dollar-sign" />
-            </span>
-            <div className="notif__body">
-              <strong>$2.3&nbsp;M gestionados</strong>
-              <span>Inversión publicitaria total</span>
-            </div>
-          </div>
+      <div className="hero__notif hero__notif--3" aria-hidden="true">
+        <span className="notif__icon notif__icon--gold">
+          <i className="fas fa-dollar-sign" />
+        </span>
+        <div className="notif__body">
+          <strong>$2.3&nbsp;M gestionados</strong>
+          <span>Inversión publicitaria total</span>
         </div>
       </div>
     </section>
