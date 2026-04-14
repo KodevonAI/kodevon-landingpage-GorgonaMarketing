@@ -1,0 +1,61 @@
+.cta-banner {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--clr-mint-pale) 0%, #e0faf0 100%);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner__glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 280px;
+  background: radial-gradient(ellipse, rgba(46,201,144,0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--clr-text);
+  text-wrap: balance;
+  margin-bottom: 0.45rem;
+}
+.cta-banner__title .accent {
+  background: var(--gradient-mint);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-banner__subtitle {
+  font-size: 0.98rem;
+  color: var(--clr-text-muted);
+}
+
+.cta-banner__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-banner__actions { justify-content: center; }
+}
