@@ -40,23 +40,33 @@ Desarrollado por **Kodevon** para el cliente Gorgona Marketing.
 
 ## 3. Tema visual
 
-| Token | Valor |
+| Token CSS | Valor |
 |---|---|
-| Color de fondo | `#ffffff` (blanco puro) |
-| Fondo alternado de sección | `#f5fdf9` |
-| Fondo sección suave | `#edfaf3` |
-| Acento primario (mint) | `#2ec990` |
-| Mint oscuro (hover) | `#1fa870` |
-| Mint más oscuro | `#157a52` |
-| Mint claro (bg chips) | `#d4f5e8` |
-| Texto principal | `#0a1f14` |
-| Texto secundario | `#2d5242` |
-| Texto muted | `#5a7a6a` |
-| Gradiente mint | `linear-gradient(135deg, #2ec990, #1bc99e, #0dc4c4)` |
+| `--clr-bg` | `#0a0f0c` (negro selva) |
+| `--clr-bg-alt` | `#0f1612` |
+| `--clr-bg-section` | `#141a16` |
+| `--clr-surface` | `#1a211d` |
+| `--clr-surface-2` | `#202820` |
+| `--clr-mint` | `#40916c` (verde selva primario) |
+| `--clr-mint-dark` | `#52b788` (texto sobre oscuro) |
+| `--clr-mint-darker` | `#74c69d` |
+| `--clr-mint-light` | `#1b4332` |
+| `--clr-mint-pale` | `#132d22` (bg chips/badges) |
+| `--clr-text` | `#f0f5f2` (blanco cálido) |
+| `--clr-text-mid` | `#c8d5ce` |
+| `--clr-text-muted` | `#6a8a78` |
+| Gradiente | `linear-gradient(135deg, #2d6a4f, #40916c, #52b788)` |
 
 Todos los tokens están en `src/index.css` bajo `:root { ... }`.
 
-**Regla de oro:** El tema es **verde menta + blanco**, no oscuro. Nunca usar fondos negros ni grises oscuros salvo en los iconos de plataformas externas (TikTok, etc.).
+**Regla de oro:** El tema es **verde selva + negro + blanco**. Fondos oscuros (`#0a0f0c`), acentos verde selva, texto blanco. Nunca fondos claros ni blancos puros.
+
+**`color-scheme: dark`** está declarado en `html {}` y `<meta name="theme-color" content="#0a0f0c">` en `index.html`.
+
+**Colores hardcodeados aceptados (NO cambiar):**
+- macOS dots en dashboard: `#ff5f57`, `#febc2e`, `#28c840` (intencional)
+- Award badge: `#fbbf24` y `rgba(251,191,36,...)` (dorado/amber, intencional)
+- Platform icons: gradientes de Instagram, colores de TikTok/Google/Meta/LinkedIn (intencional)
 
 ---
 
@@ -73,7 +83,7 @@ src/
 │   └── useCounter.js         # Anima un número de 0 a target al entrar al viewport
 │
 └── components/
-    ├── Navbar.jsx / .css     # Navbar fija, scroll transparente→blur, menú hamburguesa
+    ├── Navbar.jsx / .css     # Navbar flotante glass pill (centrada, backdrop-filter), menú hamburguesa
     ├── Hero.jsx / .css       # Hero principal (ver sección 5)
     ├── Brands.jsx / .css     # Marquee infinito de plataformas
     ├── Stats.jsx / .css      # 4 métricas con contador animado
