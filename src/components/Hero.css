@@ -481,10 +481,10 @@
   pointer-events: none;
   will-change: transform;
 }
-/* Staggered vertically on the right edge — no overlaps, never touches the dashboard */
-.hero__notif--1 { top: 10%;    right: 3%; }
-.hero__notif--2 { top: 48%;    right: 3%; }
-.hero__notif--3 { bottom: 10%; right: 3%; }
+/* Clustered naturally around the dashboard card */
+.hero__notif--1 { top: 11%;    right: 5%; }     /* arriba-derecha del dashboard  */
+.hero__notif--2 { top: 50%;    right: 24%; }    /* centro-izquierda, roza el borde del dashboard */
+.hero__notif--3 { bottom: 12%; right: 4%; }     /* abajo-derecha del dashboard   */
 
 .notif__icon {
   width: 34px; height: 34px;
