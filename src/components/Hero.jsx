@@ -119,6 +119,39 @@ function DashboardVisual() {
           ))}
         </div>
       </div>
+
+      {/* Activity feed */}
+      <div className="dashboard__feed">
+        <div className="feed-item">
+          <span className="feed-icon feed-icon--ig">
+            <i className="fab fa-instagram" aria-hidden="true" />
+          </span>
+          <div className="feed-body">
+            <strong>+12&nbsp;K seguidores</strong>
+            <span>Esta semana en Instagram</span>
+          </div>
+          <span className="feed-badge feed-badge--up">↑</span>
+        </div>
+        <div className="feed-item">
+          <span className="feed-icon feed-icon--mint">
+            <i className="fas fa-bullseye" aria-hidden="true" />
+          </span>
+          <div className="feed-body">
+            <strong>Nueva conversión</strong>
+            <span>Google Ads — hace 2&nbsp;min</span>
+          </div>
+          <span className="feed-dot-live" aria-hidden="true" />
+        </div>
+        <div className="feed-item">
+          <span className="feed-icon feed-icon--gold">
+            <i className="fas fa-dollar-sign" aria-hidden="true" />
+          </span>
+          <div className="feed-body">
+            <strong>$2.3&nbsp;M gestionados</strong>
+            <span>Inversión publicitaria total</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -224,38 +257,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating notification cards — outside the grid so they never affect layout */}
-      <div className="hero__notif hero__notif--1" aria-hidden="true">
-            <span className="notif__icon notif__icon--ig">
-              <i className="fab fa-instagram" />
-            </span>
-            <div className="notif__body">
-              <strong>+12&nbsp;K seguidores</strong>
-              <span>Esta semana en Instagram</span>
-            </div>
-            <span className="notif__arrow notif__arrow--up">↑</span>
-          </div>
-
-          <div className="hero__notif hero__notif--2" aria-hidden="true">
-            <span className="notif__icon notif__icon--mint">
-              <i className="fas fa-bullseye" />
-            </span>
-            <div className="notif__body">
-              <strong>Nueva conversión</strong>
-              <span>Google Ads — hace 2&nbsp;min</span>
-            </div>
-            <span className="notif__dot-live" />
-          </div>
-
-      <div className="hero__notif hero__notif--3" aria-hidden="true">
-        <span className="notif__icon notif__icon--gold">
-          <i className="fas fa-dollar-sign" />
-        </span>
-        <div className="notif__body">
-          <strong>$2.3&nbsp;M gestionados</strong>
-          <span>Inversión publicitaria total</span>
-        </div>
-      </div>
     </section>
   )
 }

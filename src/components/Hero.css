@@ -461,87 +461,71 @@
 .plat--meta { background: #1877f2; }
 .plat--li   { background: #0a66c2; }
 
-/* ─ Floating notification cards ─
-   Positioned relative to .hero section (outside the grid),
-   so they NEVER affect column widths or cause text reflow.
-   pointer-events:none ensures no hover interference.        */
-.hero__notif {
-  position: absolute;
+/* ─ Activity feed inside dashboard ─ */
+.dashboard__feed {
+  border-top: 1px solid var(--clr-border-light);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feed-item {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  padding: 0.75rem 1rem;
-  box-shadow: var(--shadow-md);
-  z-index: 10;
-  white-space: nowrap;
-  max-width: 240px;
-  pointer-events: none;
-  will-change: transform;
+  gap: 0.55rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius-md);
+  background: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border-light);
 }
-/* Clustered naturally around the dashboard card */
-.hero__notif--1 { top: 11%;    right: 5%; }     /* arriba-derecha del dashboard  */
-.hero__notif--2 { top: 50%;    right: 24%; }    /* centro-izquierda, roza el borde del dashboard */
-.hero__notif--3 { bottom: 12%; right: 4%; }     /* abajo-derecha del dashboard   */
 
-.notif__icon {
-  width: 34px; height: 34px;
-  border-radius: 9px;
+.feed-icon {
+  width: 28px; height: 28px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   flex-shrink: 0;
   color: #fff;
 }
-.notif__icon--ig   { background: linear-gradient(135deg, #e1306c, #833ab4); }
-.notif__icon--mint { background: var(--gradient-mint); }
-.notif__icon--gold { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.feed-icon--ig   { background: linear-gradient(135deg, #e1306c, #833ab4); }
+.feed-icon--mint { background: var(--gradient-mint); }
+.feed-icon--gold { background: linear-gradient(135deg, #f59e0b, #d97706); }
 
-.notif__body {
+.feed-body {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
+  flex: 1;
   min-width: 0;
 }
-.notif__body strong {
-  font-size: 0.8rem;
+.feed-body strong {
+  font-size: 0.74rem;
+  font-weight: 700;
   color: var(--clr-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.notif__body span {
-  font-size: 0.68rem;
+.feed-body span {
+  font-size: 0.63rem;
   color: var(--clr-text-muted);
   white-space: nowrap;
 }
 
-.notif__arrow--up {
-  font-size: 0.85rem;
+.feed-badge--up {
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--clr-mint-dark);
   flex-shrink: 0;
 }
-.notif__dot-live {
-  width: 8px; height: 8px;
+.feed-dot-live {
+  width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--clr-mint-dark);
   flex-shrink: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero__notif--1 { animation: notifFloat 6s  ease-in-out infinite; }
-  .hero__notif--2 { animation: notifFloat 7s  ease-in-out infinite 1.5s; }
-  .hero__notif--3 { animation: notifFloat 8s  ease-in-out infinite 3s; }
-
-  /* Small 5px vertical drift only — compositor-only, zero layout impact */
-  @keyframes notifFloat {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-5px); }
-  }
 }
 
 /* Responsive */
@@ -557,6 +541,5 @@
   .hero__proof     { justify-content: center; }
   .hero__partners  { justify-content: center; }
   .hero__visual    { min-height: 340px; }
-  .hero__notif     { display: none; }
   .dashboard       { max-width: 100%; }
 }
