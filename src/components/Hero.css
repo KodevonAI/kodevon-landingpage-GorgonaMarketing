@@ -153,16 +153,27 @@
 
 .hero__cycling {
   display: inline-block;
+  position: relative;
   overflow: hidden;
   vertical-align: bottom;
   height: 1.12em;
+}
+/* Spacer invisible con la palabra más larga — ancho del contenedor siempre fijo */
+.hero__cycling-spacer {
+  visibility: hidden;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.hero__cycling-word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
   background: var(--gradient-mint);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-.hero__cycling-word {
-  display: inline-block;
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero__cycling-word {
@@ -270,6 +281,16 @@
     0 0 60px rgba(46,201,144,0.07);
   position: relative;
   z-index: 2;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dashboard {
+    animation: dashFloat 5s ease-in-out infinite;
+  }
+  @keyframes dashFloat {
+    0%, 100% { transform: translateY(0);    }
+    50%       { transform: translateY(-10px); }
+  }
 }
 
 .dashboard__header {
