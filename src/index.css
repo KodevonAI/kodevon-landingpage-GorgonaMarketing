@@ -1,31 +1,32 @@
 /* ─────────────────────────────────────────
    GORGONA MARKETING — Global Styles
-   Theme: Mint Green + White
+   Theme: Verde Selva + Negro + Blanco
    ───────────────────────────────────────── */
 
 :root {
-  /* Colors */
-  --clr-bg:           #ffffff;
-  --clr-bg-alt:       #f5fdf9;
-  --clr-bg-section:   #edfaf3;
-  --clr-surface:      #ffffff;
-  --clr-surface-2:    #f0fdf7;
-  --clr-border:       #cff0de;
-  --clr-border-light: #e8f8f0;
+  /* Colors — dark jungle theme */
+  --clr-bg:           #0a0f0c;
+  --clr-bg-alt:       #0f1612;
+  --clr-bg-section:   #141a16;
+  --clr-surface:      #1a211d;
+  --clr-surface-2:    #202820;
+  --clr-border:       rgba(255, 255, 255, 0.09);
+  --clr-border-light: rgba(255, 255, 255, 0.05);
 
-  --clr-mint:         #2ec990;
-  --clr-mint-dark:    #1fa870;
-  --clr-mint-darker:  #157a52;
-  --clr-mint-light:   #d4f5e8;
-  --clr-mint-pale:    #edfaf3;
+  /* Verde selva palette */
+  --clr-mint:         #40916c;
+  --clr-mint-dark:    #52b788;
+  --clr-mint-darker:  #74c69d;
+  --clr-mint-light:   #1b4332;
+  --clr-mint-pale:    #132d22;
 
-  --clr-text:         #0a1f14;
-  --clr-text-mid:     #2d5242;
-  --clr-text-muted:   #5a7a6a;
+  --clr-text:         #f0f5f2;
+  --clr-text-mid:     #c8d5ce;
+  --clr-text-muted:   #6a8a78;
   --clr-white:        #ffffff;
 
-  --gradient-mint:    linear-gradient(135deg, #2ec990 0%, #1bc99e 50%, #0dc4c4 100%);
-  --gradient-mint-soft: linear-gradient(135deg, rgba(46,201,144,0.12) 0%, rgba(13,196,196,0.06) 100%);
+  --gradient-mint:    linear-gradient(135deg, #2d6a4f 0%, #40916c 50%, #52b788 100%);
+  --gradient-mint-soft: linear-gradient(135deg, rgba(45,106,79,0.18) 0%, rgba(82,183,136,0.08) 100%);
 
   /* Spacing */
   --radius-sm:   6px;
@@ -34,11 +35,11 @@
   --radius-xl:   28px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:   0 1px 4px rgba(46,201,144,0.08);
-  --shadow-md:   0 4px 24px rgba(46,201,144,0.12);
-  --shadow-lg:   0 16px 48px rgba(46,201,144,0.16);
-  --shadow-card: 0 2px 16px rgba(10,31,20,0.06);
+  /* Shadows — darker for dark theme */
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.4);
+  --shadow-md:   0 4px 24px rgba(0,0,0,0.45);
+  --shadow-lg:   0 16px 48px rgba(0,0,0,0.55);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.35);
 
   /* Transitions — individual properties only, never 'all' */
   --dur: 0.28s;
@@ -61,7 +62,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {
@@ -212,6 +213,16 @@ section[id] {
   outline-offset: 3px;
 }
 .btn--primary:active { transform: translateY(0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn--primary {
+    animation: btnAura 3.5s ease-in-out infinite;
+  }
+  @keyframes btnAura {
+    0%, 100% { box-shadow: 0 4px 16px rgba(46, 201, 144, 0.30); }
+    50%       { box-shadow: 0 4px 28px rgba(46, 201, 144, 0.55), 0 0 60px rgba(64, 145, 108, 0.18); }
+  }
+}
 
 .btn--outline {
   background: transparent;

@@ -98,9 +98,9 @@
   gap: 0.35em;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #15803d;
-  background: #dcfce7;
-  border: 1px solid #bbf7d0;
+  color: var(--clr-mint-darker);
+  background: var(--clr-mint-pale);
+  border: 1px solid rgba(116, 198, 157, 0.22);
   padding: 0.25em 0.75em;
   border-radius: var(--radius-full);
   white-space: nowrap;
