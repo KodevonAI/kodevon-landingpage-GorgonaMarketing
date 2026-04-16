@@ -151,25 +151,18 @@
   margin-bottom: 1.5rem;
 }
 
+/* Truco CSS Grid: todas las palabras apiladas en la misma celda.
+   El contenedor toma el ancho de la más ancha automáticamente → sin reflow. */
 .hero__cycling {
-  display: inline-block;
-  position: relative;
+  display: inline-grid;
   overflow: hidden;
   vertical-align: bottom;
   height: 1.12em;
 }
-/* Spacer invisible con la palabra más larga — ancho del contenedor siempre fijo */
-.hero__cycling-spacer {
-  visibility: hidden;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-}
 .hero__cycling-word {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
+  grid-area: 1 / 1;           /* todas en la misma celda */
+  opacity: 0;
+  transform: translateY(110%);
   background: var(--gradient-mint);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -177,11 +170,21 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero__cycling-word {
+    transition: opacity 0.25s ease-in, transform 0.25s ease-in; /* salida suave */
+  }
+  .hero__cycling-word--active {
+    transition: none;
     animation: cycleIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
   @keyframes cycleIn {
     from { transform: translateY(110%); opacity: 0; }
     to   { transform: translateY(0);    opacity: 1; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__cycling-word--active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

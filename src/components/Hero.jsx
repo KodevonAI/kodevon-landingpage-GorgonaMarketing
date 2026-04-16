@@ -30,9 +30,15 @@ function CyclingWord() {
 
   return (
     <span className="hero__cycling" aria-label={CYCLING_WORDS[idx]}>
-      {/* Spacer invisible con la palabra más larga — fija el ancho del contenedor */}
-      <span className="hero__cycling-spacer" aria-hidden="true">conversiones</span>
-      <span key={idx} className="hero__cycling-word">{CYCLING_WORDS[idx]}</span>
+      {CYCLING_WORDS.map((word, i) => (
+        <span
+          key={word}
+          className={`hero__cycling-word${i === idx ? ' hero__cycling-word--active' : ''}`}
+          aria-hidden={i !== idx ? true : undefined}
+        >
+          {word}
+        </span>
+      ))}
     </span>
   )
 }
