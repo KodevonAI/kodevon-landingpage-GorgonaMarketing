@@ -176,6 +176,7 @@ export default function Hero() {
     <section className="hero" id="hero" aria-label="Inicio">
       {/* Background layer */}
       <div className="hero__dot-grid" aria-hidden="true" />
+      <div className="hero__leaves" aria-hidden="true" />
       <div className="hero__blob hero__blob--1" aria-hidden="true" />
       <div className="hero__blob hero__blob--2" aria-hidden="true" />
       <div className="hero__blob hero__blob--3" aria-hidden="true" />
@@ -265,6 +266,10 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Ola orgánica de transición — selva al océano */}
+      <svg className="hero__wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,36 C180,72 360,0 540,36 C720,72 900,0 1080,36 C1260,72 1350,18 1440,36 L1440,72 L0,72 Z" />
+      </svg>
     </section>
   )
 }

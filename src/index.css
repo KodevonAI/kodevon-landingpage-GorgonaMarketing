@@ -20,13 +20,20 @@
   --clr-mint-light:   #1b4332;
   --clr-mint-pale:    #132d22;
 
+  /* Océano Pacífico — Gorgona isla */
+  --clr-ocean:        #0d7a72;
+  --clr-ocean-dark:   #0a5a54;
+  --clr-ocean-pale:   #062e2a;
+
   --clr-text:         #f0f5f2;
   --clr-text-mid:     #c8d5ce;
   --clr-text-muted:   #6a8a78;
   --clr-white:        #ffffff;
 
-  --gradient-mint:    linear-gradient(135deg, #2d6a4f 0%, #40916c 50%, #52b788 100%);
-  --gradient-mint-soft: linear-gradient(135deg, rgba(45,106,79,0.18) 0%, rgba(82,183,136,0.08) 100%);
+  /* Gradiente Gorgona: selva profunda → verde selva → océano Pacífico */
+  --gradient-mint:      linear-gradient(135deg, #1b4332 0%, #40916c 50%, #0d7a72 100%);
+  --gradient-mint-soft: linear-gradient(135deg, rgba(27,67,50,0.18) 0%, rgba(13,122,114,0.08) 100%);
+  --gradient-ocean:     linear-gradient(135deg, #0d7a72 0%, #40916c 100%);
 
   /* Spacing */
   --radius-sm:   6px;
