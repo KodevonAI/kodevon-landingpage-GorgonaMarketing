@@ -3,6 +3,21 @@
   background: var(--clr-bg-alt);
   border-top: 1px solid var(--clr-border-light);
   border-bottom: 1px solid var(--clr-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow orb behind the stats grid */
+.stats::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(64, 145, 108, 0.1) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .stats__grid {
@@ -25,8 +40,8 @@
 }
 .stat-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--clr-mint-light);
+  box-shadow: var(--shadow-md), 0 0 30px rgba(64, 145, 108, 0.14);
+  border-color: var(--clr-mint);
 }
 
 .stat-card__number {

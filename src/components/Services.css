@@ -1,6 +1,20 @@
 .services {
   padding: 7rem 0;
   background: var(--clr-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow — deep green orb top-right */
+.services::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(64, 145, 108, 0.09) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .services__grid {
@@ -29,7 +43,7 @@
 /* Gradient border on hover via background-clip trick */
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 0 40px rgba(64, 145, 108, 0.12);
   border-color: transparent;
   background-image:
     linear-gradient(var(--clr-surface), var(--clr-surface)),

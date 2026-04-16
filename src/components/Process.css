@@ -1,6 +1,20 @@
 .process {
   padding: 7rem 0;
   background: var(--clr-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow — soft green orb bottom-left */
+.process::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(ellipse, rgba(45, 106, 79, 0.1) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .process__grid {
